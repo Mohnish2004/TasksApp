@@ -4,34 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hustle</title>
+    <title>Lists</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </head>
 
 <body>
     <div style="margin-top: 50px;" class="ui container">
-        <h1 class="ui center aligned header">Hustle</h1>
+        <h1 class="ui center aligned header">HUSTLE</h1>
+
         <form class="ui form" action="/add" method="post">
             <div class="field">
-                <label>Todo Title</label>
+                <label>Title</label>
                 <input type="text" name="title" placeholder="Enter Todo..."><br>
             </div>
             <div class="field">
                 <label>Description</label>
-                <textarea name="description" placeholder="Enter description..."></textarea>
-            </div>
-            <div class="field">
-                <label>Due Date</label>
-                <input type="date" name="due_date">
-            </div>
-            <div class="field">
-                <label>Priority</label>
-                <select name="priority">
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
+                <textarea name="description" placeholder="Enter Description..."></textarea>
             </div>
             <button class="ui blue button" type="submit">Add</button>
         </form>
@@ -40,34 +30,16 @@
 
         {% for todo in todo_list %}
         <div class="ui segment">
-            <div class="ui big header">{{ todo.id }} | {{ todo.title }}</div>
-            <p>{{ todo.description }}</p>
-            {% if todo.complete %}
-            <span class="ui green label">Completed</span>
-            {% else %}
+            <p class="ui big header">{{todo.id }} | {{ todo.title }}</p>
+
+            {% if todo.complete == False %}
             <span class="ui gray label">Not Complete</span>
+            {% else %}
+            <span class="ui green label">Completed</span>
             {% endif %}
-            <div class="field">
-                <label>Due Date:</label>
-                <span>{{ todo.due_date }}</span>
-            </div>
-            <div class="field">
-                <label>Priority:</label>
-                <span>{{ todo.priority }}</span>
-            </div>
-            <div class="ui buttons">
-                <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
-                <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
-                {% if todo.complete %}
-                <form class="ui form" action="/uncomplete/{{ todo.id }}" method="post">
-                    <button class="ui yellow button" type="submit">Mark as Incomplete</button>
-                </form>
-                {% else %}
-                <form class="ui form" action="/complete/{{ todo.id }}" method="post">
-                    <button class="ui green button" type="submit">Mark as Complete</button>
-                </form>
-                {% endif %}
-            </div>
+
+            <a class="ui blue button" href="/update/{{ todo.id }}">Change Status</a>
+            <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
         </div>
         {% endfor %}
     </div>

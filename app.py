@@ -24,13 +24,14 @@ def landing():
 @app.route("/index")
 def index():
     todo_list = Todo.query.all() # shows all tasks
-    return render_template("testing.html", todo_list=todo_list) # flask depends on jinja engine which is used in html file
+    return render_template("base.html", todo_list=todo_list) # flask depends on jinja engine which is used in html file
 
 
 @app.route("/add", methods=["POST"])# this array is a post method, need to learn it
 def add(): # to add new to do 
     title = request.form.get("title") # also request is imported, this gets the title from the html file
-    new_todo = Todo(title=title, complete=False) 
+    description = request.form.get("description") # also request is imported, this gets the title from the html file
+    new_todo = Todo(title=title, description=description, complete=False) 
     db.session.add(new_todo)
     db.session.commit()
     return redirect(url_for("index")) #redirect,url form are imported 
