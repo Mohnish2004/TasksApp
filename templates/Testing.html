@@ -9,6 +9,17 @@
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/Users/mohnish/Desktop/TasksApp/templates/scriptj.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+          var today = new Date();
+          $('#example11').calendar({
+            minDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() - 5),
+            maxDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 5)
+          });
+        });
+    </script>
       
 </head>
 
