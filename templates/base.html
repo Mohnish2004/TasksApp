@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hustle</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .priority {
+  display: inline-block;
+  margin-left: 10px;
+}
+    </style>
 </head>
-
 <body>
     <div style="margin-top: 50px;" class="ui container">
         <h1 class="ui center aligned header">Hustle</h1>
@@ -48,41 +58,40 @@
 
         <hr>
 
-        {% for todo in todo_list %}
-        <div class="ui card">
-            <div class="content">
-                <div class="header">{{ todo.id }} | {{ todo.title }}</div>
-                {% if todo.due_date %}
-                 <div class="meta">{{ todo.due_date.strftime('%Y-%m-%d') }}</div>
-                {% else %}
-                <div class="meta">No due date specified</div>
-                {% endif %}
-                <div class="meta">Time Due : {{ todo.due_time }}</div>
-                <div class="meta">Priority: {{ todo.priority }}</div>
-                <div class="description">{{ todo.description }}</div>
-            </div>
-            <div class="extra content">
-                <div class="ui two buttons">
-                    <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
-                    <div class="or"></div>
-                    <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+        <div class="ui cards card-container">
+            {% for todo in todo_list %}
+            <div class="ui card">
+                <div class="content">
+                    <div class="header">{{ todo.id }} | {{ todo.title }}</div>
+                    {% if todo.due_date %}
+                     <div class="meta">{{ todo.due_date.strftime('%Y-%m-%d') }}</div>
+                    {% else %}
+                    <div class="meta">No due date specified</div>
+                    {% endif %}
+                    <div class="meta">Time Due: {{ todo.due_time }}</div>
+                    <div class="meta">Priority: {{ todo.priority }}</div>
+                    <div class="description">{{ todo.description }}</div>
                 </div>
-                {% if todo.complete %}
-                <form class="ui form" action="/uncomplete/{{ todo.id }}" method="post">
-                    <button class="ui yellow button" type="submit">Mark as Incomplete</button>
-                </form>
-                {% else %}
-                <form class="ui form" action="/complete/{{ todo.id }}" method="post">
-                    <button class="ui green button" type="submit">Mark as Complete</button>
-                </form>
-                {% endif %}
-            </div>
-        </div>
-        
-        {% endfor %}
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-</body>
-
-</html>
+                <div class="extra content">
+                    <div class="ui two buttons">
+                        <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+                        <div class="or"></div>
+                        <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+                    </div>
+                    {% if todo.complete %}
+                    <form class="ui form" action="/uncomplete/{{ todo.id }}" method="post">
+                        <button class="ui yellow button" type="submit">Incomplete</button>
+                        </form>
+                        {% else %}
+                        <form class="ui form" action="/complete/{{ todo.id }}" method="post">
+                        <button class="ui green button" type="submit">Complete</button>
+                        </form>
+                        {% endif %}
+                        </div>
+                        </div>
+                        {% endfor %}
+                        </div>
+                        </div>
+                        
+                        </body>
+                        </html>
