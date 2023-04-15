@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite' # /// = relative path, //// = absolute path
@@ -13,6 +15,10 @@ class Todo(db.Model): # this is the database model, where we specify all entries
     description = db.Column(db.String(200))
     complete = db.Column(db.Boolean) # boolean value to check completion
     status = db.Column(db.Integer) # EXPERIMENTAL TO ADD STATUS SLIDER
+    due_date = db.Column(db.Date)
+    priority = db.Column(db.String(10))
+    due_date = db.Column(db.DateTime)  # Change the due date column to a DateTime type
+
 
 
 @app.route("/")
@@ -28,14 +34,17 @@ def index():
 
 
 @app.route("/add", methods=["POST"])# this array is a post method, need to learn it
-def add(): # to add new to do 
-    title = request.form.get("title") # also request is imported, this gets the title from the html file
-    description = request.form.get("description") # also request is imported, this gets the title from the html file
-    new_todo = Todo(title=title, description=description, complete=False) 
+def add():
+    title = request.form.get("title")
+    description = request.form.get("description")
+    due_date_str = request.form.get("due_date") + " " + request.form.get("due_time")  # Concatenate date and time strings
+    priority = request.form.get("priority")
+    due_date = datetime.strptime(due_date_str, "%Y-%m-%d %H:%M")  # Convert the concatenated string to a datetime object
+
+    new_todo = Todo(title=title, description=description, complete=False, due_date=due_date, priority=priority)
     db.session.add(new_todo)
     db.session.commit()
-    return redirect(url_for("index")) #redirect,url form are imported 
-    # this refreshes the page when user adds item 
+    return redirect(url_for("index"))
 
 
 @app.route("/update/<int:todo_id>") # this is different because its for an integer id 
@@ -58,8 +67,6 @@ def status(todo_id):
     todo = Todo.query.filter_by(id=todo_id).first() # we are not just requested but instead querying/searching for the update function. THe first is to return just one
     todo.status = int(request.form["status"]) # changes depending on slider
     db.session.commit()
-    return redirect(url_for("index"))
-
 if __name__ == "__main__":
     with app.app_context(): # creates context for DB to be created
         db.drop_all()
