@@ -7,6 +7,9 @@
     <title>Hustle</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/Users/mohnish/Desktop/TasksApp/templates/scriptj.js"></script>
+      
 </head>
 
 <body>
@@ -21,10 +24,14 @@
                 <label>Description</label>
                 <textarea name="description" placeholder="Enter description..."></textarea>
             </div>
-            <div class="field">
-                <label>Due Date</label>
-                <input type="date" name="due_date">
+            <h3>Min/Max date</h3>
+            <div class="ui calendar" id="example11">
+                <div class="ui input">
+                    <input type="text" placeholder="Date">
+                </div>
             </div>
+            <br/>
+            
             <div class="field">
                 <label>Priority</label>
                 <select name="priority">
@@ -38,8 +45,9 @@
 
         <hr>
 
+        {% for todo in todo_list %}
         <div class="ui segment">
-            <div class="ui big header">{{ todo.id }} | {{ todo.title }}</div>
+            <div class="ui big header">{{todo.id }} | {{ todo.title }}</div>
             <p>{{ todo.description }}</p>
             {% if todo.complete %}
             <span class="ui green label">Completed</span>
@@ -67,8 +75,10 @@
                 </form>
                 {% endif %}
             </div>
+            {% endfor %}
         </div>
-    </div>
-</body>
 
-</html>
+    </body>
+    </html> 
+        
+           

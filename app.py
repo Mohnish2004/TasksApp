@@ -23,7 +23,7 @@ def landing():
 @app.route("/index")
 def index():
     todo_list = Todo.query.all() # shows all tasks
-    return render_template("Testing.html", todo_list=todo_list) # flask depends on jinja engine which is used in html file
+    return render_template("testing.html", todo_list=todo_list) # flask depends on jinja engine which is used in html file
 
 
 @app.route("/add", methods=["POST"])# this array is a post method, need to learn it
