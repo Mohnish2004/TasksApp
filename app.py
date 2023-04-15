@@ -10,6 +10,7 @@ db = SQLAlchemy(app)
 class Todo(db.Model): # this is the database model, where we specify all entries for the database
     id = db.Column(db.Integer, primary_key=True) # This database needs 3 things, id, to do title and boolean value to know if its completed 
     title = db.Column(db.String(100)) # straight forward strng for title with max characters 100
+    description = db.Column(db.String(200))
     complete = db.Column(db.Boolean) # boolean value to check completion
     status = db.Column(db.Integer) # EXPERIMENTAL TO ADD STATUS SLIDER
 
