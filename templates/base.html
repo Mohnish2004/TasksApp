@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </head>
@@ -13,7 +12,6 @@
 <body>
     <div style="margin-top: 50px;" class="ui container">
         <h1 class="ui center aligned header">Tasks app</h1>
-
         <form class="ui form" action="/add" method="post">
             <div class="field">
                 <label>Todo Title</label>
@@ -24,15 +22,24 @@
 
         <hr>
 
-        {% for todo in todo_list %}
+        {% for todo in todo_list %} <!-- works on jinja engine, similar to python -->
         <div class="ui segment">
-            <p class="ui big header">{{todo.id }} | {{ todo.title }}</p>
+            <div class="field">
+                <label>Completion Percentage</label>
+                <form action="/status/{{ todo.id }}" method="post">
+                    <input type="range" name="status" min="0" max="100" value="{{ todo.status }}" step="25" class="progress-bar">
+                    <button type="submit" class="ui green button">Update Status</button>
+                </form>
 
-            {% if todo.complete == False %}
+            </div>
+
+            <p class="ui big header">{{todo.id }} | {{ todo.title }}</p> <!-- accessing the variables from the db-->
+
+            {% if todo.complete == False %} <!--checking the status of the to do-->
             <span class="ui gray label">Not Complete</span>
             {% else %}
             <span class="ui green label">Completed</span>
-            {% endif %}
+            {% endif %} <!--ends if conditions meet essentially-->
 
             <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
             <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
