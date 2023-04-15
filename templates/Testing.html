@@ -1,119 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hustle</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-    <style>
-        body {
-          background-color: #f5f5f5;
-          font-family: "Helvetica Neue", sans-serif;
-          font-weight: 400;
-        }
-    
-        .container {
-          margin-top: 60px;
-          margin-bottom: 60px;
-        }
-    
-        .ui.header {
-          font-size: 2rem;
-          font-weight: 700;
-        }
-    
-        .ui.segment {
-          border: none;
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-          padding: 30px;
-        }
-    
-        .ui.segment .ui.header {
-          margin-top: 0;
-          margin-bottom: 20px;
-        }
-    
-        .ui.action.input input[type="text"] {
-          border: none;
-          border-radius: 0;
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-          font-size: 1.2rem;
-          padding: 10px;
-          width: 100%;
-        }
-    
-        .ui.action.input button {
-          border-radius: 0;
-          font-size: 1.2rem;
-          margin-left: 5px;
-        }
-    
-        .ui.list .item {
-          margin-bottom: 20px;
-          padding: 20px;
-        }
-    
-        .ui.list .item i {
-          font-size: 1.5rem;
-          margin-right: 10px;
-        }
-    
-        .ui.list .item .description {
-          font-size: 1.2rem;
-        }
-    
-        .ui.list .item.completed .description {
-          color: #aaa;
-          text-decoration: line-through;
-        }
-    
-        .ui.list .item .actions {
-          margin-top: 10px;
-        }
-    
-        .ui.list .item .actions .ui.button {
-          font-size: 1rem;
-        }
-    
-        .ui.list .item .actions .ui.red.button {
-          margin-left: 5px;
-        }
-    
-        .ui.list .item .actions .ui.button i {
-          margin-right: 5px;
-        }
-    
-        .ui.list .item .actions .ui.green.button {
-          background-color: #1abc9c;
-        }
-    
-        .ui.list .item .actions .ui.yellow.button {
-          background-color: #f1c40f;
-        }
-    
-        .ui.list .item .actions .ui.red.button {
-          background-color: #e74c3c;
-        }
-    
-        /* Progress slider */
-        .ui.progress {
-          margin-top: 20px;
-        }
-    
-        .ui.progress .bar {
-          transition: width 0.5s ease;
-        }
-    
-        .ui.progress .progress {
-          font-size: 1.2rem;
-          font-weight: bold;
-          margin-left: 10px;
-        }
-    </style>
-    
 </head>
+
 <body>
     <div style="margin-top: 50px;" class="ui container">
         <h1 class="ui center aligned header">Hustle</h1>
@@ -122,34 +17,58 @@
                 <label>Todo Title</label>
                 <input type="text" name="title" placeholder="Enter Todo..."><br>
             </div>
+            <div class="field">
+                <label>Description</label>
+                <textarea name="description" placeholder="Enter description..."></textarea>
+            </div>
+            <div class="field">
+                <label>Due Date</label>
+                <input type="date" name="due_date">
+            </div>
+            <div class="field">
+                <label>Priority</label>
+                <select name="priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
             <button class="ui blue button" type="submit">Add</button>
         </form>
 
         <hr>
 
-        {% for todo in todo_list %}
         <div class="ui segment">
-            <p class="ui big header">{{todo.id }} | {{ todo.title }}</p>
-            {% if todo.complete == False %}
-            <span class="ui gray label">Not Complete</span>
-            {% else %}
+            <div class="ui big header">{{ todo.id }} | {{ todo.title }}</div>
+            <p>{{ todo.description }}</p>
+            {% if todo.complete %}
             <span class="ui green label">Completed</span>
+            {% else %}
+            <span class="ui gray label">Not Complete</span>
             {% endif %}
-            <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
-            <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
             <div class="field">
-                <br>
-                <label class="ui big header">Completion Percentage</label>
-                <br>
-                <form action="/status/{{ todo.id }}" method="post">
-                    <input type="range" name="status" min="0" max="100" value="{{ todo.status }}" step="25" >
-                    <button type="submit" class="circular ui icon button">
-                        <i class="sync"></i>
-                    </button>
+                <label>Due Date:</label>
+                <span>{{ todo.due_date }}</span>
+            </div>
+            <div class="field">
+                <label>Priority:</label>
+                <span>{{ todo.priority }}</span>
+            </div>
+            <div class="ui buttons">
+                <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+                <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+                {% if todo.complete %}
+                <form class="ui form" action="/uncomplete/{{ todo.id }}" method="post">
+                    <button class="ui yellow button" type="submit">Mark as Incomplete</button>
                 </form>
+                {% else %}
+                <form class="ui form" action="/complete/{{ todo.id }}" method="post">
+                    <button class="ui green button" type="submit">Mark as Complete</button>
+                </form>
+                {% endif %}
             </div>
         </div>
-        {% endfor %}
     </div>
 </body>
+
 </html>
