@@ -16,7 +16,7 @@ Hustle is built with the following technologies:
 
 * Python 3.9.7
 * Flask 2.0.2
-* SQLite 3.36.0
+* SQLALCHEMY
 * HTML 5
 * CSS 3
 * JavaScript
