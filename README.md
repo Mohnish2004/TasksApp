@@ -2,8 +2,7 @@
 
 ![Frame 4949 (3)](https://user-images.githubusercontent.com/81405395/232273519-8e067f93-769d-4905-a9aa-0a296c9a5d6d.png)
 
-# Current Prototype 
-
+### Beta 1
 https://user-images.githubusercontent.com/81405395/232275130-83047466-5c77-4f4e-a38a-bd9c56c7c29a.mp4
 
 # Hustle - A To-Do List Web Application
@@ -25,7 +24,7 @@ Hustle is built with the following technologies:
 * Font Awesome 5.15.4
 
 ## Features
-###Hustle includes the following features:
+### Hustle includes the following features:
 
 * Add new tasks with a title, description, due date, priority, and completion status.
 * Update existing tasks to mark them as complete or change their details.
@@ -33,7 +32,7 @@ Hustle is built with the following technologies:
 * Sort tasks by title, due date, priority, or completion status.
 * Filter tasks by due date, priority, or completion status.
 
-###Upcoming features 
+### Upcoming features 
 * Use a status slider to indicate the progress of each task.
 * Synchronize your tasks with your calendar and never miss an important event again.
 * Receive notifications and reminders for upcoming tasks and events.
@@ -81,7 +80,9 @@ If you would like to contribute to Hustle, please follow these steps:
 
 ## License
 
-Hustle is open source software licensed under the MIT License.
+Hustle is open source software licensed under the MIT License. See the LICENSE file for details.
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ## Branding
 
