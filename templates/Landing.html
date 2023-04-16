@@ -9,6 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   <style>
+		.ui.inverted.header {
+  font-size: 2em;
+}
+
     body {
       background-color: #F5F5F5;
     }
@@ -47,6 +51,15 @@
       padding: 1em 3em;
       margin-top: 2em;
     }
+
+    .ui.button {
+      background-color: #d07e21;
+      color: #FFF;
+      font-weight: bold;
+      font-size: 1em;
+      padding: 1em 2em;
+      margin-top: 1em;
+    }
     .ui.primary.button:hover {
       background-color: #d07e21;
       color: #FFF;
@@ -84,16 +97,19 @@
   </style>
 </head>
 
+
+
+
 <body>
   <!-- Navigation bar -->
-  <div class="ui big menu">
+  <div class="ui secondary menu">
     <a class="item">Home</a>
     <a class="item">About</a>
     <a class="item">Pricing</a>
     <a class="item">Contact</a>
     <div class="right menu">
-      <a class="ui primary item">Sign Up</a>
-      <a class="ui primary  item">Log In</a>
+      <a class="ui button">Sign Up</a>
+      <a class="ui button">Log In</a>
     </div>
   </div>
 
@@ -101,8 +117,11 @@
   <div class="ui text container">
     <h1 class="ui inverted header">Hustle</h1>
     <h2>Get Things Done Faster and Easier</h2>
-    <a href="/index" class="ui primary button">Start The Hustle</a>
+    <a href="/index" class="ui button">Start The Hustle</a>
   </div>
+
+
+
   <!-- Features section -->
   <div class="ui stackable three column grid">
     <div class="column">
@@ -110,14 +129,15 @@
       <h3>Task Management</h3>
       <p>Easily manage and organize your daily tasks with Hustle.</p>
     </div>
+
     <div class="column">
       <i class="fas fa-calendar-alt"></i>
-      <h3>Calendar Integration</h3>
+      <h3>Calendar Integration (Soon)</h3>
       <p>Synchronize your tasks with your calendar and never miss an important event again.</p>
     </div>
     <div class="column">
       <i class="fas fa-bell"></i>
-      <h3>Reminder Notifications</h3>
+      <h3>Reminder Notifications (Soon) </h3>
       <p>Receive notifications and reminders for upcoming tasks and events.</p>
     </div>
   </div>
