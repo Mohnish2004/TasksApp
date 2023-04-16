@@ -13,10 +13,25 @@
             align-items: center;
         }
         .priority {
-  display: inline-block;
-  margin-left: 10px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .card {
+            width: 300px;
+            margin-bottom: 20px;
+            cursor: move;
+        }
+        .ui.buttons .button {
+            padding: 0.5rem 1rem;
+        }
+        .card.completed {
+  background-color: #d4d4d4;
+  color: #888;
+  text-decoration: line-through;
 }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 </head>
 <body>
     <div style="margin-top: 50px;" class="ui container">
@@ -24,7 +39,7 @@
         <form class="ui form" action="/add" method="post">
             <div class="field">
                 <label>Todo Title</label>
-                <input type="text" name="title" placeholder="Enter Todo..."><br>
+                <input type="text" name="title" placeholder="Enter Todo...">
             </div>
             <div class="field">
                 <label>Description</label>
@@ -47,51 +62,88 @@
                         <option value="high">High</option>
                     </select>
                 </div>
-                </div>
-                <div class="ui center aligned">
-                    <button class="ui blue button" type="submit">Add</button>
-                </div>
             </div>
-            
+            <div class="ui center aligned">
+                <button class="ui blue button" type="submit">Add</button>
+            </div>
         </form>
-
 
         <hr>
 
         <div class="ui cards card-container">
             {% for todo in todo_list %}
-            <div class="ui card">
-                <div class="content">
-                    <div class="header">{{ todo.id }} | {{ todo.title }}</div>
-                    {% if todo.due_date %}
-                     <div class="meta">{{ todo.due_date.strftime('%Y-%m-%d') }}</div>
-                    {% else %}
-                    <div class="meta">No due date specified</div>
-                    {% endif %}
-                    <div class="meta">Time Due: {{ todo.due_time }}</div>
-                    <div class="meta">Priority: {{ todo.priority }}</div>
-                    <div class="description">{{ todo.description }}</div>
-                </div>
-                <div class="extra content">
-                    <div class="ui two buttons">
-                        <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
-                        <div class="or"></div>
-                        <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
-                    </div>
-                    {% if todo.complete %}
-                    <form class="ui form" action="/uncomplete/{{ todo.id }}" method="post">
-                        <button class="ui yellow button" type="submit">Incomplete</button>
-                        </form>
-                        {% else %}
-                        <form class="ui form" action="/complete/{{ todo.id }}" method="post">
-                        <button class="ui green button" type="submit">Complete</button>
-                        </form>
-                        {% endif %}
-                        </div>
-                        </div>
-                        {% endfor %}
-                        </div>
-                        </div>
-                        
-                        </body>
-                        </html>
+  <div class="ui card{{ ' completed' if todo.complete }}">
+    <div class="content">
+      <div class="header">{{ todo.id }} | {{ todo.title }}</div>
+      {% if todo.due_date %}
+        <div class="meta">{{ todo.due_date.strftime('%Y-%m-%d') }}</div>
+      {% else %}
+        <div class="meta">No due date specified</div>
+      {% endif %}
+      <div class="meta">Time Due: {{ todo.due_time }}</div>
+      <div class="meta">Priority: {{ todo.priority }}</div>
+      <div class="description">{{ todo.description }}</div>
+    </div>
+    <div class="extra content">
+      <div class="ui two mini buttons">
+        <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+        <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+      </div>
+      {% if todo.complete %}
+        <form class="ui form" action="/uncomplete/{{ todo.id }}" method="post">
+          <button class="ui green button" type="submit">Completed</button>
+        </form>
+      {% else %}
+        <form class="ui form" action="/complete/{{ todo.id }}" method="post">
+          <button class="ui black button" type="submit">Complete</button>
+        </form>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script>
+$(function() {
+  $(".card").draggable({
+    connectToSortable: ".card-container",
+    revert: "invalid"
+  });
+  
+  $(".card-container").sortable({
+    connectWith: ".card-container",
+    placeholder: "ui-state-highlight",
+    start: function(e, ui) {
+      ui.placeholder.height(ui.item.height());
+    },
+    stop: function(e, ui) {
+      var cards = [];
+      $(".card-container .card").each(function() {
+        cards.push($(this).attr("id"));
+      });
+      $.ajax({
+        url: "/update_order",
+        type: "POST",
+        data: JSON.stringify({ "cards": cards }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function(data) {
+          console.log(data);
+        },
+        error: function(xhr, status, error) {
+          console.log(xhr.responseText);
+        }
+      });
+    }
+  }).disableSelection();
+});
+
+
+</script>
+
+</body>
+</html>

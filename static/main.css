@@ -1,0 +1,1280 @@
+* {/* Rectangle 1 */
+
+
+  position: absolute;
+  width: 270px;
+  height: 901px;
+  left: 0px;
+  top: 74px;
+  
+  background: #FFFFFF;
+  
+  
+  /* Rectangle 2 */
+  
+  
+  position: absolute;
+  width: 1440px;
+  height: 74px;
+  left: 0px;
+  top: 0px;
+  
+  background: #FFFFFF;
+  
+  
+  /* Nav item */
+  
+  
+  position: absolute;
+  width: 173px;
+  height: 50px;
+  left: 48px;
+  top: 127px;
+  
+  
+  
+  /* Nav item */
+  
+  
+  position: absolute;
+  width: 173px;
+  height: 50px;
+  left: 48px;
+  top: 193px;
+  
+  
+  
+  /* Nav item */
+  
+  
+  position: absolute;
+  width: 173px;
+  height: 50px;
+  left: 48px;
+  top: 259px;
+  
+  
+  
+  /* Nav item */
+  
+  
+  position: absolute;
+  width: 173px;
+  height: 50px;
+  left: 48px;
+  top: 325px;
+  
+  
+  
+  /* Nav item */
+  
+  
+  position: absolute;
+  width: 173px;
+  height: 50px;
+  left: 48px;
+  top: 391px;
+  
+  
+  
+  /* Nav item */
+  
+  
+  position: absolute;
+  width: 173px;
+  height: 50px;
+  left: 48px;
+  top: 457px;
+  
+  
+  
+  /* Line 1 */
+  
+  
+  position: absolute;
+  width: 901px;
+  height: 0px;
+  left: 269px;
+  top: 74px;
+  
+  /* Gray 5 */
+  
+  border: 0.958007px solid #E0E0E0;
+  transform: rotate(90deg);
+  
+  
+  /* Line 2 */
+  
+  
+  position: absolute;
+  width: 1440px;
+  height: 0px;
+  left: 1440px;
+  top: 74px;
+  
+  /* Gray 5 */
+  
+  border: 1.10893px solid #E0E0E0;
+  transform: rotate(180deg);
+  
+  
+  /* Frame 1746 */
+  
+  
+  /* Auto layout */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7.71429px;
+  gap: 12.86px;
+  
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  left: 1288px;
+  top: 19px;
+  
+  background: #F7F6F4;
+  border-radius: 11.5714px;
+  
+  
+  /* Rectangle 744 */
+  
+  
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  left: 1356px;
+  top: 19px;
+  
+  background: url(.png);
+  border-radius: 11.57px;
+  
+  
+  /* Happy new month, Seun */
+  
+  
+  position: absolute;
+  width: 272px;
+  height: 12px;
+  left: 317px;
+  top: 122px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 12px;
+  /* identical to box height, or 50% */
+  
+  
+  color: #BDBDBD;
+  
+  
+  
+  /* Welcome to your dashboard */
+  
+  
+  position: absolute;
+  width: 158px;
+  height: 12px;
+  left: 317px;
+  top: 150px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Gray 1 */
+  
+  color: #333333;
+  
+  
+  
+  /* Rectangle 751 */
+  
+  
+  box-sizing: border-box;
+  
+  position: absolute;
+  width: 219px;
+  height: 252px;
+  left: 800px;
+  top: 195px;
+  
+  background: #FFFFFF;
+  /* Gray 5 */
+  
+  border: 1px solid #E0E0E0;
+  border-radius: 24px;
+  
+  
+  /* Rectangle 755 */
+  
+  
+  box-sizing: border-box;
+  
+  position: absolute;
+  width: 219px;
+  height: 252px;
+  left: 558px;
+  top: 195px;
+  
+  background: #FFFFFF;
+  /* Gray 5 */
+  
+  border: 1px solid #E0E0E0;
+  border-radius: 24px;
+  
+  
+  /* Rectangle 756 */
+  
+  
+  box-sizing: border-box;
+  
+  position: absolute;
+  width: 219px;
+  height: 252px;
+  left: 317px;
+  top: 195px;
+  
+  background: #FFFFFF;
+  /* Gray 5 */
+  
+  border: 1px solid #E0E0E0;
+  border-radius: 24px;
+  
+  
+  /* Rectangle 748 */
+  
+  
+  box-sizing: border-box;
+  
+  position: absolute;
+  width: 702px;
+  height: 234px;
+  left: 317px;
+  top: 463px;
+  
+  background: #FFFFFF;
+  /* Gray 5 */
+  
+  border: 1px solid #E0E0E0;
+  border-radius: 24px;
+  
+  
+  /* Rectangle 746 */
+  
+  
+  position: absolute;
+  width: 357px;
+  height: 252px;
+  left: 1035px;
+  top: 195px;
+  
+  background: #F4F7FF;
+  border-radius: 24px;
+  
+  
+  /* Rectangle 752 */
+  
+  
+  box-sizing: border-box;
+  
+  position: absolute;
+  width: 702px;
+  height: 239px;
+  left: 317px;
+  top: 708px;
+  
+  background: #FFFFFF;
+  /* Gray 5 */
+  
+  border: 1px solid #E0E0E0;
+  border-radius: 24px;
+  
+  
+  /* Rectangle 747 */
+  
+  
+  box-sizing: border-box;
+  
+  position: absolute;
+  width: 357px;
+  height: 320px;
+  left: 1036px;
+  top: 463px;
+  
+  background: #FFFFFF;
+  /* Gray 5 */
+  
+  border: 1px solid #E0E0E0;
+  border-radius: 24px;
+  
+  
+  /* Inbox */
+  
+  
+  position: absolute;
+  width: 39px;
+  height: 12px;
+  left: 1067px;
+  top: 487px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 12px;
+  /* identical to box height, or 80% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Active orders */
+  
+  
+  position: absolute;
+  width: 92px;
+  height: 12px;
+  left: 348px;
+  top: 487px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 12px;
+  /* identical to box height, or 80% */
+  
+  
+  color: #000000;
+  
+  
+  
+  /* View all */
+  
+  
+  position: absolute;
+  width: 43px;
+  height: 12px;
+  left: 936px;
+  top: 487px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  color: #115EF4;
+  
+  
+  
+  /* View all */
+  
+  
+  position: absolute;
+  width: 43px;
+  height: 12px;
+  left: 1306px;
+  top: 487px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  color: #115EF4;
+  
+  
+  
+  /* Buyer */
+  
+  
+  position: absolute;
+  width: 32px;
+  height: 12px;
+  left: 382px;
+  top: 523px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Gray 3 */
+  
+  color: #828282;
+  
+  
+  
+  /* Gig */
+  
+  
+  position: absolute;
+  width: 20px;
+  height: 12px;
+  left: 459px;
+  top: 523px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Gray 3 */
+  
+  color: #828282;
+  
+  
+  
+  /* Due on */
+  
+  
+  position: absolute;
+  width: 40px;
+  height: 12px;
+  left: 735px;
+  top: 523px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Gray 3 */
+  
+  color: #828282;
+  
+  
+  
+  /* Total */
+  
+  
+  position: absolute;
+  width: 28px;
+  height: 12px;
+  left: 861px;
+  top: 523px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Gray 3 */
+  
+  color: #828282;
+  
+  
+  
+  /* Note */
+  
+  
+  position: absolute;
+  width: 27px;
+  height: 12px;
+  left: 972px;
+  top: 523px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Gray 3 */
+  
+  color: #828282;
+  
+  
+  
+  /* Response rate */
+  
+  
+  position: absolute;
+  width: 100px;
+  height: 12px;
+  left: 383px;
+  top: 226px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 12px;
+  /* identical to box height, or 80% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Delivery on time */
+  
+  
+  position: absolute;
+  width: 113px;
+  height: 12px;
+  left: 624px;
+  top: 227px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 12px;
+  /* identical to box height, or 80% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Order completion */
+  
+  
+  position: absolute;
+  width: 123px;
+  height: 12px;
+  left: 866px;
+  top: 226px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 12px;
+  /* identical to box height, or 80% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Active Gigs */
+  
+  
+  position: absolute;
+  width: 80px;
+  height: 12px;
+  left: 344px;
+  top: 732px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 12px;
+  /* identical to box height, or 80% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Group 1633 */
+  
+  
+  position: absolute;
+  width: 46.67px;
+  height: 16px;
+  left: 80px;
+  top: 29px;
+  
+  
+  
+  /* Group 1621 */
+  
+  
+  position: absolute;
+  width: 219px;
+  height: 194px;
+  left: 1106px;
+  top: 227px;
+  
+  
+  
+  /* Line 4 */
+  
+  
+  position: absolute;
+  width: 356px;
+  height: 0px;
+  left: 1036px;
+  top: 515px;
+  
+  /* Gray 5 */
+  
+  border: 1px solid #E0E0E0;
+  
+  
+  /* Group 1622 */
+  
+  
+  position: absolute;
+  width: 356px;
+  height: 51px;
+  left: 1036px;
+  top: 531px;
+  
+  
+  
+  /* Iconly/Broken/Star */
+  
+  
+  position: absolute;
+  left: 24.17%;
+  right: 74.58%;
+  top: 58.77%;
+  bottom: 39.38%;
+  
+  
+  
+  /* Iconly/Bold/Star */
+  
+  
+  position: absolute;
+  left: 24.17%;
+  right: 74.58%;
+  top: 66.67%;
+  bottom: 31.49%;
+  
+  
+  
+  /* Group 1623 */
+  
+  
+  position: absolute;
+  width: 356px;
+  height: 51px;
+  left: 1036px;
+  top: 598px;
+  
+  
+  
+  /* Group 1624 */
+  
+  
+  position: absolute;
+  width: 356px;
+  height: 51px;
+  left: 1036px;
+  top: 665px;
+  
+  
+  
+  /* Group 1628 */
+  
+  
+  position: absolute;
+  width: 356px;
+  height: 51px;
+  left: 1036px;
+  top: 732px;
+  
+  
+  
+  /* Group 1312 */
+  
+  
+  position: absolute;
+  width: 135px;
+  height: 135px;
+  left: 359px;
+  top: 274px;
+  
+  
+  
+  /* Group 1626 */
+  
+  
+  position: absolute;
+  width: 135px;
+  height: 135px;
+  left: 599px;
+  top: 274px;
+  
+  
+  
+  /* Group 1627 */
+  
+  
+  position: absolute;
+  width: 135px;
+  height: 135.61px;
+  left: 839px;
+  top: 273.39px;
+  
+  
+  
+  /* Ellipse 166 */
+  
+  
+  position: absolute;
+  left: 26.53%;
+  right: 70.35%;
+  top: 65.23%;
+  bottom: 30.15%;
+  
+  background: url(.png);
+  
+  
+  /* Create a website design for an ecommerce... */
+  
+  
+  position: absolute;
+  width: 249px;
+  height: 12px;
+  left: 459px;
+  top: 576px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Smooth interactions to a mobile app */
+  
+  
+  position: absolute;
+  width: 204px;
+  height: 12px;
+  left: 459px;
+  top: 653px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Jan 27, 2021 */
+  
+  
+  position: absolute;
+  width: 66px;
+  height: 12px;
+  left: 735px;
+  top: 576px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Feb 21, 2021 */
+  
+  
+  position: absolute;
+  width: 66px;
+  height: 12px;
+  left: 735px;
+  top: 653px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* $1000 */
+  
+  
+  position: absolute;
+  width: 34px;
+  height: 12px;
+  left: 861px;
+  top: 576px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* $2000 */
+  
+  
+  position: absolute;
+  width: 36px;
+  height: 12px;
+  left: 861px;
+  top: 653px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Line 6 */
+  
+  
+  position: absolute;
+  left: 24.17%;
+  right: 30.62%;
+  top: 63.59%;
+  bottom: 36.41%;
+  
+  /* Gray 5 */
+  
+  border: 1px solid #E0E0E0;
+  
+  
+  /* Line 7 */
+  
+  
+  position: absolute;
+  left: 23.89%;
+  right: 30.9%;
+  top: 71.49%;
+  bottom: 28.51%;
+  
+  /* Gray 5 */
+  
+  border: 1px solid #E0E0E0;
+  
+  
+  /* Sticky Note / Light / Duotone */
+  
+  
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 972px;
+  top: 566px;
+  
+  
+  
+  /* Sticky Note / Light / Duotone */
+  
+  
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 972px;
+  top: 643px;
+  
+  
+  
+  /* UI/UX Design */
+  
+  
+  position: absolute;
+  width: 74px;
+  height: 12px;
+  left: 341px;
+  top: 900px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Interaction Design */
+  
+  
+  position: absolute;
+  width: 103px;
+  height: 12px;
+  left: 507px;
+  top: 900px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Album cover arts */
+  
+  
+  position: absolute;
+  width: 95px;
+  height: 12px;
+  left: 673px;
+  top: 900px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Line 6 */
+  
+  
+  position: absolute;
+  left: 23.89%;
+  right: 30.9%;
+  top: 71.49%;
+  bottom: 28.51%;
+  
+  /* Gray 5 */
+  
+  border: 1px solid #E0E0E0;
+  
+  
+  /* Mask Group */
+  
+  
+  position: absolute;
+  width: 150px;
+  height: 116px;
+  left: 341px;
+  top: 768px;
+  
+  
+  
+  /* Rectangle 766 */
+  
+  
+  position: absolute;
+  width: 150px;
+  height: 116px;
+  left: 839px;
+  top: 768px;
+  
+  background: #F4F7FF;
+  border-radius: 8px;
+  
+  
+  /* Mask Group */
+  
+  
+  position: absolute;
+  width: 150px;
+  height: 116px;
+  left: 507px;
+  top: 768px;
+  
+  
+  
+  /* Rectangle 761 */
+  
+  
+  position: absolute;
+  width: 50px;
+  height: 18px;
+  left: 341px;
+  top: 768px;
+  
+  background: #FFB800;
+  border-radius: 8px 0px 0px 0px;
+  
+  
+  /* Best seller */
+  
+  
+  position: absolute;
+  width: 38px;
+  height: 12px;
+  left: 348px;
+  top: 771px;
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 12px;
+  /* identical to box height, or 150% */
+  
+  
+  color: #000000;
+  
+  
+  
+  /* Iconly/Bold/Arrow - Right */
+  
+  
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 985px;
+  top: 486px;
+  
+  
+  
+  /* Iconly/Bold/Arrow - Right */
+  
+  
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 1355px;
+  top: 486px;
+  
+  
+  
+  /* Group 1629 */
+  
+  
+  position: absolute;
+  width: 357px;
+  height: 148px;
+  left: 1036px;
+  top: 799px;
+  
+  
+  
+  /* Apple_Messages-512 1 */
+  
+  
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 1114px;
+  top: 483px;
+  
+  background: url(.png);
+  
+  
+  /* Group 1630 */
+  
+  
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 341px;
+  top: 219px;
+  
+  
+  
+  /* Group 1631 */
+  
+  
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 582px;
+  top: 219px;
+  
+  
+  
+  /* Group 1632 */
+  
+  
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 824px;
+  top: 219px;
+  
+  
+  
+  /* Mask Group */
+  
+  
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  left: 382px;
+  top: 559px;
+  
+  
+  
+  /* Iconly/Light-outline/Plus */
+  
+  
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 902px;
+  top: 804px;
+  
+  
+  
+  /* image 209 */
+  
+  
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 432px;
+  top: 728px;
+  
+  background: url(.png);
+  
+  
+  /* Create a new gig */
+  
+  
+  position: absolute;
+  width: 96px;
+  height: 12px;
+  left: 866px;
+  top: calc(50% - 12px/2 + 354.5px);
+  
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  
+  
+  /* Font */
+  
+  color: #000B38;
+  
+  
+  
+  /* Mask Group */
+  
+  
+  position: absolute;
+  width: 150px;
+  height: 116px;
+  left: 673px;
+  top: 768px;
+  
+  
+  
+  /* image 208 */
+  
+  
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 448px;
+  top: 477px;
+  
+  background: url(.png);
+  
+  
+  /* 43709c6105c2cda88348f70c60948d30 1 */
+  
+  
+  position: absolute;
+  width: 98px;
+  height: 77px;
+  left: 1270px;
+  top: 841px;
+  
+  background: url(.jpg);
+  border-radius: 24px;
+  
+  
+  /* Group 4939 */
+  
+  
+  position: absolute;
+  width: 23px;
+  height: 24.29px;
+  left: 52px;
+  top: 24px;
+}

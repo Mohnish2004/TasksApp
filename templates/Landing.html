@@ -12,16 +12,16 @@
     body {
       background-color: #F5F5F5;
     }
-    .ui.inverted.menu {
+    .ui.big.menu {
       background-color: transparent;
-      border: none;
-      box-shadow: none;
+      border: black;
+      box-shadow: grey;
     }
-    .ui.inverted.menu .item {
+    .ui.big.menu .item {
       color: #333;
     }
-    .ui.inverted.menu .active.item {
-      color: #2185d0;
+    .ui.menu .active.item {
+      color: #d07e21;
     }
     .ui.text.container {
       margin-top: 5em;
@@ -40,7 +40,7 @@
       color: #777;
     }
     .ui.primary.button {
-      background-color: #2185d0;
+      background-color: #d07e21;
       color: #FFF;
       font-weight: bold;
       font-size: 1.2em;
@@ -48,7 +48,7 @@
       margin-top: 2em;
     }
     .ui.primary.button:hover {
-      background-color: #1678c2;
+      background-color: #d07e21;
       color: #FFF;
     }
     .ui.stackable.three.column.grid {
@@ -59,7 +59,7 @@
     }
     .ui.stackable.three.column.grid .column i {
       font-size: 6em;
-      color: #2185d0;
+      color: #d07e21;
     }
     .ui.stackable.three.column.grid .column h3 {
       font-size: 2em;
@@ -86,14 +86,14 @@
 
 <body>
   <!-- Navigation bar -->
-  <div class="ui inverted menu">
+  <div class="ui big menu">
     <a class="item">Home</a>
     <a class="item">About</a>
     <a class="item">Pricing</a>
     <a class="item">Contact</a>
     <div class="right menu">
-      <a class="ui item">Sign Up</a>
-      <a class="ui item">Log In</a>
+      <a class="ui primary item">Sign Up</a>
+      <a class="ui primary  item">Log In</a>
     </div>
   </div>
 
