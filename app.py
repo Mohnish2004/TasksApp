@@ -69,6 +69,5 @@ def status(todo_id):
     db.session.commit()
 if __name__ == "__main__":
     with app.app_context(): # creates context for DB to be created
-        db.drop_all()
         db.create_all() # creates database - this resulted in database file being created 
     app.run(debug=True)
