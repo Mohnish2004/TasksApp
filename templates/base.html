@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hustle</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
     <style>
         .card-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+            padding-top: 20px; /* adjust the value to your desired spacing */
         }
         .priority {
             display: inline-block;
@@ -28,6 +31,14 @@
   background-color: #d4d4d4;
   color: #888;
   text-decoration: line-through;
+}
+.card.update {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.no-decoration {
+  text-decoration: none !important;
 }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -64,7 +75,7 @@
                 </div>
             </div>
             <div class="ui center aligned">
-                <button class="ui blue button" type="submit">Add</button>
+                <button class="ui orange button" type="submit">Add</button>
             </div>
         </form>
 
@@ -84,18 +95,19 @@
       <div class="meta">Priority: {{ todo.priority }}</div>
       <div class="description">{{ todo.description }}</div>
     </div>
-    <div class="extra content">
-      <div class="ui two mini buttons">
-        <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
-        <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
-      </div>
+    <div class="extra content" style="display: flex; flex-direction: column; gap: 10px;">
+        <div class="ui two mini buttons">
+            <a class="ui orange button no-decoration" href="/update/{{ todo.id }}">Update</a>
+            <a class="ui grey button" href="/delete/{{ todo.id }}">Delete</a>
+          </div>
+          
       {% if todo.complete %}
         <form class="ui form" action="/uncomplete/{{ todo.id }}" method="post">
-          <button class="ui green button" type="submit">Completed</button>
+          <a class="ui green tag label">Completed</a>
         </form>
       {% else %}
         <form class="ui form" action="/complete/{{ todo.id }}" method="post">
-          <button class="ui black button" type="submit">Complete</button>
+            <a class="ui red tag label">Incomplete</a>
         </form>
       {% endif %}
     </div>
@@ -107,6 +119,9 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+
 <script>
 $(function() {
   $(".card").draggable({
@@ -141,9 +156,13 @@ $(function() {
     }
   }).disableSelection();
 });
-
-
 </script>
-
+<script>const updateBtn = document.querySelector('.update-btn');
+    const card = document.querySelector('.card');
+    
+    updateBtn.addEventListener('click', () => {
+      card.classList.add('update');
+    });
+    </script>
 </body>
 </html>
