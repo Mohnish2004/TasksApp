@@ -25,7 +25,7 @@ Hustle is built with the following technologies:
 * Font Awesome 5.15.4
 
 ## Features
-Hustle includes the following features:
+###Hustle includes the following features:
 
 * Add new tasks with a title, description, due date, priority, and completion status.
 * Update existing tasks to mark them as complete or change their details.
@@ -33,7 +33,7 @@ Hustle includes the following features:
 * Sort tasks by title, due date, priority, or completion status.
 * Filter tasks by due date, priority, or completion status.
 
-Upcoming features 
+###Upcoming features 
 * Use a status slider to indicate the progress of each task.
 * Synchronize your tasks with your calendar and never miss an important event again.
 * Receive notifications and reminders for upcoming tasks and events.
@@ -59,8 +59,7 @@ To install and run Hustle on your local machine, follow these steps:
 5. Install the required Python packages:
 ```pip install -r requirements.txt```
 
-6. Initialize the database:
-```python3
+6. Initialize the database:```python3
 from app import db
 db.create_all()
 quit()```
@@ -70,6 +69,22 @@ quit()```
 
 8. Open Hustle in your web browser by navigating to http://localhost:5000/
 
+## Contributing
+
+If you would like to contribute to Hustle, please follow these steps:
+
+1. Fork this repository
+2. Create a new branch (`git checkout -b my-new-feature`)
+3. Make your changes and commit them (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new pull request
+
 ## License
-Hustle is licensed under the MIT License. See LICENSE for more information.
+
+Hustle is open source software licensed under the MIT License.
+
+## Branding
+
+Hustle's branding consists of a bold, sans-serif logotype in all caps, paired with a bright and energetic color palette of blue, green, and orange. The app's interface features clean, minimalist design and a simple, intuitive user experience, encouraging users to focus on productivity and getting things done.
+
 
