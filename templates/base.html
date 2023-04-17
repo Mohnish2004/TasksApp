@@ -1,176 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hustle</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hustle</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-    <style>
-        .ui.center.aligned.header {
-    font-size: 5em; /* adjust the value to your desired font size */
-}
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 20px; /* adjust the value to your desired spacing */
-        }
-        .priority {
-            display: inline-block;
-            margin-left: 10px;
-        }
-        .card {
-            width: 300px;
-            margin-bottom: 20px;
-            cursor: move;
-        }
-        .ui.buttons .button {
-            padding: 0.5rem 1rem;
-        }
-        .card.completed {
-  background-color: #d4d4d4;
-  color: #888;
-  text-decoration: line-through;
-}
-.card.update {
-  opacity: 0.5;
-  pointer-events: none;
-}
+        <style>
+            .ui.center.aligned.header {
+                font-size: 5em; /* adjust the value to your desired font size */
+            }
+            .card-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                padding-top: 20px; /* adjust the value to your desired spacing */
+            }
+            .priority {
+                display: inline-block;
+                margin-left: 10px;
+            }
+            .card {
+                width: 300px;
+                margin-bottom: 20px;
+                cursor: move;
+            }
+            .ui.buttons .button {
+                padding: 0.5rem 1rem;
+            }
+            .card.completed {
+                background-color: #d4d4d4;
+                color: #888;
+                text-decoration: line-through;
+            }
+            .card.update {
+                opacity: 0.5;
+                pointer-events: none;
+            }
 
-.no-decoration {
-  text-decoration: none !important;
-}
-    </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-</head>
+            .no-decoration {
+                text-decoration: none !important;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    </head>
 
-
-
-
-
-<body>
-    <div style="margin-top: 10px;" class="ui container">
-        <h1 class="ui center aligned header">Hustle</h1>
-        <form class="ui form" action="/add" method="post">
-            <div class="field">
-                <label>Todo Title</label>
-                <input type="text" name="title" placeholder="Enter Todo...">
-            </div>
-            <div class="field">
-                <label>Description</label>
-                <textarea name="description" placeholder="Enter description..." rows="2"></textarea>
-            </div>
-            <div class="three fields">
+    <body>
+        <div style="margin-top: 10px;" class="ui container">
+            <h1 class="ui center aligned header">Hustle</h1>
+            <form class="ui form" action="/add" method="post">
                 <div class="field">
-                    <label>Due Date</label>
-                    <input type="date" name="due_date">
+                    <label>Todo Title</label>
+                    <input type="text" name="title" placeholder="Enter Todo..." />
                 </div>
                 <div class="field">
-                    <label>Due Time</label>
-                    <input type="time" name="due_time">
+                    <label>Description</label>
+                    <textarea name="description" placeholder="Enter description..." rows="2"></textarea>
                 </div>
-                <div class="field">
-                    <label>Priority</label>
-                    <select name="priority" class="ui dropdown">
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
+                <div class="three fields">
+                    <div class="field">
+                        <label>Due Date</label>
+                        <input type="date" name="due_date" />
+                    </div>
+                    <div class="field">
+                        <label>Due Time</label>
+                        <input type="time" name="due_time" />
+                    </div>
+                    <div class="field">
+                        <label>Priority</label>
+                        <select name="priority" class="ui dropdown">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
                 </div>
+                <div class="ui center aligned">
+                    <button class="ui orange button" type="submit">Add</button>
+                </div>
+            </form>
+
+            <hr />
+
+            <div class="ui cards card-container">
+                {% for todo in todo_list %}
+                <div class="ui card{{ ' completed' if todo.complete }}">
+                    <div class="content">
+                        <div class="header">{{ todo.id }} | {{ todo.title }}</div>
+                        {% if todo.due_date %}
+                        <div class="meta">{{ todo.due_date.strftime('%Y-%m-%d') }}</div>
+                        {% else %}
+                        <div class="meta">No due date specified</div>
+                        {% endif %}
+                        <div class="meta">Time Due: {{ todo.due_time }}</div>
+                        <div class="meta">Priority: {{ todo.priority }}</div>
+                        <div class="description">{{ todo.description }}</div>
+                    </div>
+                    <div class="extra content" style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="ui two mini buttons">
+                            <a class="ui orange button no-decoration" href="/update/{{ todo.id }}">Update</a>
+                            <a class="ui grey button" href="/delete/{{ todo.id }}">Delete</a>
+                        </div>
+
+                        {% if todo.complete %}
+                        <form class="ui form" action="/uncomplete/{{ todo.id }}" method="post">
+                            <a class="ui green tag label">Completed</a>
+                        </form>
+                        {% else %}
+                        <form class="ui form" action="/complete/{{ todo.id }}" method="post">
+                            <a class="ui red tag label">Incomplete</a>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-            <div class="ui center aligned">
-                <button class="ui orange button" type="submit">Add</button>
-            </div>
-        </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-        <hr>
+        <script>
+            $(function () {
+                $(".card").draggable({
+                    connectToSortable: ".card-container",
+                    revert: "invalid",
+                });
 
-        <div class="ui cards card-container">
-            {% for todo in todo_list %}
-  <div class="ui card{{ ' completed' if todo.complete }}">
-    <div class="content">
-      <div class="header">{{ todo.id }} | {{ todo.title }}</div>
-      {% if todo.due_date %}
-        <div class="meta">{{ todo.due_date.strftime('%Y-%m-%d') }}</div>
-      {% else %}
-        <div class="meta">No due date specified</div>
-      {% endif %}
-      <div class="meta">Time Due: {{ todo.due_time }}</div>
-      <div class="meta">Priority: {{ todo.priority }}</div>
-      <div class="description">{{ todo.description }}</div>
-    </div>
-    <div class="extra content" style="display: flex; flex-direction: column; gap: 10px;">
-        <div class="ui two mini buttons">
-            <a class="ui orange button no-decoration" href="/update/{{ todo.id }}">Update</a>
-            <a class="ui grey button" href="/delete/{{ todo.id }}">Delete</a>
-          </div>
-          
-      {% if todo.complete %}
-        <form class="ui form" action="/uncomplete/{{ todo.id }}" method="post">
-          <a class="ui green tag label">Completed</a>
-        </form>
-      {% else %}
-        <form class="ui form" action="/complete/{{ todo.id }}" method="post">
-            <a class="ui red tag label">Incomplete</a>
-        </form>
-      {% endif %}
-    </div>
-  </div>
-{% endfor %}
+                $(".card-container")
+                    .sortable({
+                        connectWith: ".card-container",
+                        placeholder: "ui-state-highlight",
+                        start: function (e, ui) {
+                            ui.placeholder.height(ui.item.height());
+                        },
+                        stop: function (e, ui) {
+                            var cards = [];
+                            $(".card-container .card").each(function () {
+                                cards.push($(this).attr("id"));
+                            });
+                            $.ajax({
+                                url: "/update_order",
+                                type: "POST",
+                                data: JSON.stringify({ cards: cards }),
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success: function (data) {
+                                    console.log(data);
+                                },
+                                error: function (xhr, status, error) {
+                                    console.log(xhr.responseText);
+                                },
+                            });
+                        },
+                    })
+                    .disableSelection();
+            });
+        </script>
+        <script>
+            const updateBtn = document.querySelector(".update-btn");
+            const card = document.querySelector(".card");
 
-</div>
-</div>
-</div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-
-
-
-<script>
-$(function() {
-  $(".card").draggable({
-    connectToSortable: ".card-container",
-    revert: "invalid"
-  });
-  
-  $(".card-container").sortable({
-    connectWith: ".card-container",
-    placeholder: "ui-state-highlight",
-    start: function(e, ui) {
-      ui.placeholder.height(ui.item.height());
-    },
-    stop: function(e, ui) {
-      var cards = [];
-      $(".card-container .card").each(function() {
-        cards.push($(this).attr("id"));
-      });
-      $.ajax({
-        url: "/update_order",
-        type: "POST",
-        data: JSON.stringify({ "cards": cards }),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function(data) {
-          console.log(data);
-        },
-        error: function(xhr, status, error) {
-          console.log(xhr.responseText);
-        }
-      });
-    }
-  }).disableSelection();
-});
-</script>
-<script>const updateBtn = document.querySelector('.update-btn');
-    const card = document.querySelector('.card');
-    
-    updateBtn.addEventListener('click', () => {
-      card.classList.add('update');
-    });
-    </script>
-</body>
+            updateBtn.addEventListener("click", () => {
+                card.classList.add("update");
+            });
+        </script>
+    </body>
 </html>
