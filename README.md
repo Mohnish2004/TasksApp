@@ -64,7 +64,7 @@ from app import db
 db.create_all()
 quit()```
 
-7. Start the Flask server:
+7. Start Flask server:
 ```flask run```
 
 8. Open Hustle in your web browser by navigating to http://localhost:5000/
