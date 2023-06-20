@@ -89,4 +89,6 @@ Hustle is open source software licensed under the MIT License. See the LICENSE f
 
 Hustle's branding consists of a bold, sans-serif logotype in all caps, paired with a bright and energetic color palette of blue, green, and orange. The app's interface features clean, minimalist design and a simple, intuitive user experience, encouraging users to focus on productivity and getting things done.
 
+New release soon...
+
 
